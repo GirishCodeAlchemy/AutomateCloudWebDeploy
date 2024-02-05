@@ -1,0 +1,41 @@
+name: Build and Push Docker Image
+on:
+  pull_request:
+    paths:
+    - 'Docker/**'
+  workflow_dispatch:
+    inputs:
+      dockerTagVersion:
+        description: 'Docker tag version'
+        required: false
+
+jobs:
+  build:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Increment Docker Image Tag Version
+      id: create-image-tag
+      run: |
+        if [ -n "${{ github.event.inputs.dockerTagVersion }}" ]; then
+          echo "DOCKER_TAG : ${{ github.event.inputs.dockerTagVersion }}"
+          echo "DOCKER_TAG=${{ github.event.inputs.dockerTagVersion }}" >> $GITHUB_ENV
+        else
+          echo ${{ github.run_number }}
+          echo ${{ github.event.number }}
+          echo "DOCKER_TAG=0.${{ github.run_number }}.${{ github.event.number }}" >> $GITHUB_ENV
+        fi
+
+    - name: Build and Push the Docker Image
+      run: |
+        cd Docker
+        ./build_docker.sh
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
