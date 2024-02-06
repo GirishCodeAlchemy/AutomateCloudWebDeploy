@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       imageTag:
-        description: 'Docker tag version'
+        description: 'Image tag version'
         required: true
 
 jobs:
@@ -25,3 +25,5 @@ jobs:
       run: |
         echo "ImageTag : ${{ github.event.inputs.imageTag }}"
         python deploy.py ${{ github.event.inputs.imageTag }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

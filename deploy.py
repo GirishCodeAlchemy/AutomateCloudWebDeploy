@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 
@@ -8,7 +9,13 @@ class ImageTagUpdater:
     def __init__(self, yaml_file_path, new_image_tag):
         self.yaml_file_path = yaml_file_path
         self.new_image_tag = new_image_tag
-        self.branch_name = f'update-image-tag-{new_image_tag}'
+        self.github_token = os.environ.get('GITHUB_TOKEN')
+        self.branch_name = f'release-{new_image_tag}'
+        self.github_event_path = os.environ.get('GITHUB_EVENT_PATH')
+        self.uri = "https://api.github.com"
+        self.header = {
+            'Authorization': f'Bearer {self.github_token}',
+            'Accept': 'application/vnd.github.v3+json'}
 
     def check_docker_image_exists(self):
         try:
@@ -21,6 +28,29 @@ class ImageTagUpdater:
         except requests.RequestException as e:
             print(f"Error checking image: {e}")
             sys.exit(1)
+
+    def get_user_info(self):
+        print("Getting user info...")
+        user_login = os.environ.get('GITHUB_ACTOR')  # Get the username from the environment
+        print(f"Getting user info for {user_login}...")
+
+        response = requests.get(
+            f"{self.uri}/users/{self.user_login}",
+            headers=self.header
+        )
+        data = response.json()
+        user = data.get("name", self.user_login)
+        user_email = data.get("email", f"{self.user_login}@users.noreply.github.com")
+        if user_email is None:
+            user_email = f"{self.user_login}@users.noreply.github.com"
+        return user, user_email
+
+    def git_config(self):
+        print("Configuring git...")
+        self.user, self.user_email = self.get_user_info()
+        subprocess.run(["git", "config", "--global", "--add", "safe.directory", "/github/workspace"])
+        subprocess.run(["git", "config", "--global", "user.email", str(self.user_email)])
+        subprocess.run(["git", "config", "--global", "user.name", str(self.user)])
 
     def update_image_tag(self):
         try:
@@ -67,6 +97,7 @@ class ImageTagUpdater:
 
     def create_pull_request(self, pr_title, pr_body):
         try:
+            self.git_config()
             self.create_or_checkout_branch()
             self.update_image_tag()
             self.commit_and_push_changes()
