@@ -37,7 +37,7 @@ spec:
               mountPath: /usr/share/nginx/html/page2.html
               subPath: page2.html
             - name: html
-              mountPath: /etc/nginx/conf.d/index.html
+              mountPath: /usr/share/nginx/html/index.html
               subPath: index.html
             - name: html
               mountPath: /etc/nginx/conf.d/nginx.conf
