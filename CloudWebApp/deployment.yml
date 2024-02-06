@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: girishcodealchemy/alchemy-nginx:latest
+          image: girishcodealchemy/alchemy-nginx:v2
           imagePullPolicy: Always
           resources:
             requests:
