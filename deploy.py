@@ -81,7 +81,7 @@ class ImageTagUpdater:
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: python script.py <new_image_tag>")
+        print("Usage: python deploy.py <new_image_tag>")
         sys.exit(1)
     new_image_tag = sys.argv[1]
     deployment_yaml_path = 'CloudWebApp/deployment.yml'
