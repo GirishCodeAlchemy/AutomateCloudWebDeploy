@@ -1,0 +1,3 @@
+variable "KUBECONFIG" {
+  type = string
+}

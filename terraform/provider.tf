@@ -9,6 +9,6 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path    = "~/.kube/config"
+  config_path    = var.KUBECONFIG
   config_context = "turo-assignment"
 }
