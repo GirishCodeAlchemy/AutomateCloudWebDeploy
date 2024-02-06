@@ -66,11 +66,13 @@ class ImageTagUpdater:
                 end_index = yaml_content.find(' ', start_index)
                 if end_index == -1:
                     end_index = len(yaml_content)
-                tag_to_replace = yaml_content[start_index+len(pattern):end_index]
+                tag_to_replace = yaml_content[start_index+len(pattern):end_index-1]
                 updated_yaml_content = yaml_content.replace(
                     f'{self.docker_repo}:{tag_to_replace}',
                     f'{self.docker_repo}:{self.new_image_tag}'
                 )
+            else:
+                raise ValueError("No image tag found in the YAML content")
 
             # Write the updated content back to the file
             with open(self.yaml_file_path, 'w') as f:
@@ -138,11 +140,9 @@ class ImageTagUpdater:
             self.commit_and_push_changes()
             if self.check_pull_request_exists():
                 return
-            # Create a pull request
-            subprocess.run(['gh', 'pr', 'create', '--base', 'main', '--head', self.branch_name, '--title', pr_title, '--body', pr_body])
-
-            print(f"Pull request created for branch: {self.branch_name}")
-
+            else:
+                subprocess.run(['gh', 'pr', 'create', '--base', 'main', '--head', self.branch_name, '--title', pr_title, '--body', pr_body])
+                print(f"Pull request created for branch: {self.branch_name}")
         except Exception as e:
             print(f"Error creating pull request: {e}")
 
