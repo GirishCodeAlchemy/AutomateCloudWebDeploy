@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: girishcodealchemy
+  namespace: candidate-f
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+      annotations:
+        injector.nsm.nginx.com/auto-inject: "enabled"
+    spec:
+      containers:
+        - name: webserver
+          image: girishcodealchemy/alchemy-nginx:test
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "2m"
+            limits:
+              memory: "32Mi"
+              cpu: "32m"
+          ports:
+            - containerPort: 80
+              name: "http"
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html/config.html
+              subPath: config.html
+          env:
+            - name: SERVER_NAME
+              value: 'girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu'
+            - name: PORT
+              value: "80"
+      volumes:
+        - name: "html"
+          configMap:
+            name: girishcodealchemy-configmap
