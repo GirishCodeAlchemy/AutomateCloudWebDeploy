@@ -4,6 +4,17 @@ Turo Assignment: Automating Web Deployment on Cloud
 
 This repository addresses the automation of web deployment on the cloud in multiple phases. It involves setting up a basic web application deployment to serve static files using Docker, Terraform, and Kubernetes. The provided code focuses on a specific aspect of this process, which includes building the Docker image, updating Terraform code with the latest tag, and creating a pull request in Git as part of the continuous integration (CI) process. Once the code is merged into the main branch, it triggers a Terraform plan in the Terraform code, deploying and exposing the application in Kubernetes
 
+## Tools Used
+
+1. **Docker**: _Containerization platform used to build and manage Docker images._
+2. **Bash Scripting**: _Utilized for scripting tasks and automation within the deployment process._
+3. **Python**: _Programming language used for scripting and automation tasks, such as interacting with APIs and manipulating YAML files._
+4. **Git**: _Version control system used for managing code changes, branches, and pull requests._
+5. **Terraform**: _Infrastructure-as-Code (IaC) tool used to provision and manage cloud resources._
+6. **Kubernetes**: _Container orchestration platform used to deploy, scale, and manage containerized applications._
+7. **GitHub Actions**: _CI/CD platform integrated with GitHub repositories to automate workflows and tasks._
+8. **Terraform Cloud**: _Cloud-based service for collaborative Terraform workflows, including execution and management of Terraform plans._
+
 ## Workflow Overview
 
 ```mermaid
