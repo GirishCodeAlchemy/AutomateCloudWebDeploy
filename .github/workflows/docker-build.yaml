@@ -29,7 +29,7 @@ jobs:
         else
           echo ${{ github.run_number }}
           echo ${{ github.event.number }}
-          echo "DOCKER_TAG=0.${{ github.run_number }}.${{ github.event.number }}" >> $GITHUB_ENV
+          echo "DOCKER_TAG=0.${{ github.run_number }}.${{ github.event.number }}-dev" >> $GITHUB_ENV
         fi
 
     - name: Build and Push the Docker Image
