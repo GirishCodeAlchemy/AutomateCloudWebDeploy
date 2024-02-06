@@ -78,7 +78,7 @@ data:
               <div class="collapse navbar-collapse" id="myTogglerNav">
                 <div class="navbar-nav ms-auto font-weight-regular">
                   <a class="nav-item nav-link text-white" href="index.html">home</a>
-                  <a class="nav-item nav-link" href="/page2.html">Page1</a>
+                  <a class="nav-item nav-link" href="page1.html">Page1</a>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ data:
                     This is the page1 of our web application
                   </p>
                   <a class="btn btn-outline-dark" href="index.html">Main</a>
-                  <a class="btn btn-outline-dark" href="/page2.html">Page1</a>
+                  <a class="btn btn-outline-dark" href="page1.html">Page1</a>
                 </div>
               </div>
             </div>
@@ -110,7 +110,6 @@ data:
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <meta http-equiv="refresh" content="0; URL=page2.html">
         <title>TuroCloudWebDeploy</title>
       </head>
 
@@ -133,7 +132,7 @@ data:
               <div class="collapse navbar-collapse" id="myTogglerNav">
                 <div class="navbar-nav ms-auto font-weight-regular">
                   <a class="nav-item nav-link text-white" href="index.html">home</a>
-                  <a class="nav-item nav-link" href="page2.html">Page1</a>
+                  <a class="nav-item nav-link" href="page1.html">Page1</a>
                 </div>
               </div>
             </div>
@@ -148,13 +147,12 @@ data:
                     This is the main page of our web application.
                     <img src="assets/cover.jpeg" alt="Cover Image">
                   </p>
-                  <a class="btn btn-outline-dark" href="page2.html">Page1</a>
+                  <a class="btn btn-outline-dark" href="page1.html">Page1</a>
                 </div>
               </div>
             </div>
           </section>
         </header>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
       </body>
     </html>
