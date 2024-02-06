@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: girishcodealchemy/alchemy-nginx:0.15.6
+          image: girishcodealchemy/alchemy-nginx:latest
           imagePullPolicy: Always
           resources:
             requests:
@@ -31,8 +31,7 @@ spec:
               name: "http"
           volumeMounts:
             - name: html
-              mountPath: /usr/share/nginx/html/config.html
-              subPath: config.html
+              mountPath: /usr/share/nginx/html/new
           env:
             - name: SERVER_NAME
               value: 'girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu'
@@ -42,3 +41,8 @@ spec:
         - name: "html"
           configMap:
             name: girishcodealchemy-configmap
+            # items:
+            #   - key: config.html
+            #     path: config.html
+            #   - key: page2.html
+            #     path: page2.html

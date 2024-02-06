@@ -9,3 +9,59 @@ data:
     <h1>This is a configMap HTML landing page running Nginx</h1>
     </br>
     </html>
+  page2.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <title>TuroCloudWebDeploy Page2</title>
+      </head>
+
+      <body class="bg-primary">
+        <header id="page-hero" class="d-flex flex-column align-content-between">
+          <nav class="navbar navbar-expand-md bg-primary navbar-dark text-uppercase">
+            <div class="container">
+              <button
+                type="button"
+                class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#myTogglerNav"
+                aria-controls="myTogglerNav"
+                aria-label="Toggle Navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <a class="navbar-brand" href="#page-hero"><a class="navbar-brand" href="index.html">GirishCodeAlchemy</a>
+              <div class="collapse navbar-collapse" id="myTogglerNav">
+                <div class="navbar-nav ms-auto font-weight-regular">
+                  <a class="nav-item nav-link text-white" href="index.html">home</a>
+                  <a class="nav-item nav-link" href="page1.html">Page1</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <section class="bg-body-tertiary py-4 d-flex align-items-center">
+            <div class="container text-center">
+              <div class="row justify-content-center">
+                <div class="col-11 col-sm-10 col-md-8 animated fadeInUp">
+                  <h3 class="display-4">Page1</h3>
+                  <p class="lead">
+                    This is the page1 of our web application
+                  </p>
+                  <a class="btn btn-outline-dark" href="index.html">Main</a>
+                  <a class="btn btn-outline-dark" href="page1.html">Page1</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </header>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      </body>
+    </html>
+
