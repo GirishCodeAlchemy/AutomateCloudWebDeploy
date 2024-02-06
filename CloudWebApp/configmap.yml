@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: girishcodealchemy-configmap
+  namespace: candidate-f
+data:
+  config.html: |
+    <html>
+    <h1>This is a configMap HTML landing page running Nginx</h1>
+    </br>
+    </html>
