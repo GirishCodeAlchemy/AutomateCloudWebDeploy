@@ -16,6 +16,8 @@ class ImageTagUpdater:
         self.header = {
             'Authorization': f'Bearer {self.github_token}',
             'Accept': 'application/vnd.github.v3+json'}
+        self.user_login = os.environ.get('GITHUB_ACTOR')
+
 
     def check_docker_image_exists(self):
         try:
@@ -30,9 +32,7 @@ class ImageTagUpdater:
             sys.exit(1)
 
     def get_user_info(self):
-        print("Getting user info...")
-        user_login = os.environ.get('GITHUB_ACTOR')  # Get the username from the environment
-        print(f"Getting user info for {user_login}...")
+        print(f"Getting user info for {self.user_login}...")
 
         response = requests.get(
             f"{self.uri}/users/{self.user_login}",
