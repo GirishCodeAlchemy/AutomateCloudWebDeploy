@@ -6,14 +6,14 @@ This repository addresses the automation of web deployment on the cloud in multi
 
 ## Tools Used
 
-1. **Docker**: _Containerization platform used to build and manage Docker images._
-2. **Bash Scripting**: _Utilized for scripting tasks and automation within the deployment process._
-3. **Python**: _Programming language used for scripting and automation tasks, such as interacting with APIs and manipulating YAML files._
-4. **Git**: _Version control system used for managing code changes, branches, and pull requests._
-5. **Terraform**: _Infrastructure-as-Code (IaC) tool used to provision and manage cloud resources._
-6. **Kubernetes**: _Container orchestration platform used to deploy, scale, and manage containerized applications._
-7. **GitHub Actions**: _CI/CD platform integrated with GitHub repositories to automate workflows and tasks._
-8. **Terraform Cloud**: _Cloud-based service for collaborative Terraform workflows, including execution and management of Terraform plans._
+1. [**Docker**](): _Containerization platform used to build and manage Docker images._
+2. [**Bash Scripting**](): _Utilized for scripting tasks and automation within the deployment process._
+3. [**Python**](): _Programming language used for scripting and automation tasks, such as interacting with APIs and manipulating YAML files._
+4. [**Git**](): _Version control system used for managing code changes, branches, and pull requests._
+5. [**Terraform**](): _Infrastructure-as-Code (IaC) tool used to provision and manage cloud resources._
+6. [**Kubernetes**](): _Container orchestration platform used to deploy, scale, and manage containerized applications._
+7. [**GitHub Actions**](): _CI/CD platform integrated with GitHub repositories to automate workflows and tasks._
+8. [**Terraform Cloud**](): _Cloud-based service for collaborative Terraform workflows, including execution and management of Terraform plans._
 
 ## Workflow Overview
 
