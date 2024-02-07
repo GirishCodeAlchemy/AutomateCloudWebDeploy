@@ -17,30 +17,8 @@ This repository addresses the automation of web deployment on the cloud in multi
 
 ## Workflow Overview
 
-```mermaid
-graph LR;
-    A[Start] --> B[Setup Environment]
-    B -->|Phase 1| C[Build Docker Image]
-    C --> D[Push Docker Image to Registry]
-    D -->|Phase 2| E[Update Terraform Code]
-    E --> F[Create Pull Request]
-    F --> G[Merge to Main Branch]
-    G -->|Phase 3| H[Terraform Cloud]
-    H --> I[Review the Terraform plan]
-    I --> J[Apply Terraform Changes]
-    J --> K[Expose Application in Kubernetes]
-    K --> L[End]
+![turo-assignment](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/e74f4fa5-d580-4746-b07a-7d6098fd04af)
 
-
-    classDef phase1Style fill:purple,stroke:#333,stroke-width:2px,max-width:300px,font-weight:bold,font-color:red;
-    classDef phase2Style fill:blue,stroke:#333,stroke-width:2px,max-width:300px,font-weight:bold,font-color:red;
-    classDef phase3Style fill:green,stroke:#333,stroke-width:2px,max-width:300px,font-weight:bold,font-color:red;
-
-    class C,D phase1Style;
-    class E,F,G phase2Style;
-    class H,I,J,K phase3Style;
-
-```
 
 ## Phase1: [Build and Push Docker Image](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/actions/workflows/docker-build.yaml)
 
