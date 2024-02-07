@@ -17,7 +17,7 @@ This repository addresses the automation of web deployment on the cloud in multi
 
 ## Workflow Overview
 
-![turo-assignment](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/e74f4fa5-d580-4746-b07a-7d6098fd04af)
+![turo-cloud-assignment](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/acf8f64e-d7f4-487e-a6ca-f027f78c147f)
 
 
 ## Phase1: [Build and Push Docker Image](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/actions/workflows/docker-build.yaml)
