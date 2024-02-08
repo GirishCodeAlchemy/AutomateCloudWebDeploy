@@ -3,11 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       imageTag:
-        description: 'Image tag version'
+        description: 'Image tag version to Deploy'
         required: true
 
 jobs:
-  build:
+  update_image_tag_and_deploy:
+    name: Update Image Tag to - ${{ github.event.inputs.imageTag }} and Deploy
     environment: dev
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +20,9 @@ jobs:
       with:
         python-version: '3.10'
         cache: 'pip' # caching pip dependencies
-    - run: pip install -r requirements.txt
+
+    - name: Install Python Dependencies
+      run: pip install -r requirements.txt
 
     - name: Update the Image Tag and Deploy
       run: |
@@ -27,3 +30,29 @@ jobs:
         python deploy.py ${{ github.event.inputs.imageTag }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Go Environment
+      uses: actions/setup-go@v5
+      with:
+        go-version: '>=1.17.0'
+
+    - name: Download Go Modules
+      working-directory: test
+      run: go mod download
+
+    - name: Pull kubeconfig
+      working-directory: test
+      run: |
+        mkdir kubeconf
+        echo "$KUBE_CONFIG" > kubeconf/kubeconf.conf
+        ls -l kubeconf
+      env:
+        KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+
+    - name: Run TerraTest
+      working-directory: test
+      run: go test -v
+      env:
+        KUBECONFIG: "kubeconf/kubeconf.conf"
+        KUBE_HOST: ${{ secrets.KUBE_HOST }}
+        KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}

@@ -12,13 +12,13 @@ This repository addresses the automation of web deployment on the cloud in multi
 4. [**Git**](): _Version control system used for managing code changes, branches, and pull requests._
 5. [**Terraform**](): _Infrastructure-as-Code (IaC) tool used to provision and manage cloud resources._
 6. [**Kubernetes**](): _Container orchestration platform used to deploy, scale, and manage containerized applications._
-7. [**GitHub Actions**](): _CI/CD platform integrated with GitHub repositories to automate workflows and tasks._
-8. [**Terraform Cloud**](): _Cloud-based service for collaborative Terraform workflows, including execution and management of Terraform plans._
+7. [**Terratest**](): _Go library for testing infrastructure code, to test the terraform code._
+8. [**GitHub Actions**](): _CI/CD platform integrated with GitHub repositories to automate workflows and tasks._
+9. [**Terraform Cloud**](): _Cloud-based service for collaborative Terraform workflows, including execution and management of Terraform plans._
 
 ## Workflow Overview
 
 ![turo-cloud-assignment](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/acf8f64e-d7f4-487e-a6ca-f027f78c147f)
-
 
 ## Phase1: [Build and Push Docker Image](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/actions/workflows/docker-build.yaml)
 
@@ -37,13 +37,12 @@ This phase automates the process of building and pushing Docker images. Here's h
 
 This phase streamlines the process of Docker image management, ensuring consistency and reliability in the deployment pipeline.
 
-
 ![Buildthe version tag](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/9f1924bb-c514-4031-be06-6132eaf7ee9a)
 ![githubaction-build](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/f04529f1-0d02-4fb6-9b7b-f20b2fde3444)
 ![phase1](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/751c3e7d-02b2-4884-af98-3c40588f54b0)
 ![dockerhub](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/6c0b1ea2-a12b-461c-b32b-b1e54a3e8c5a)
 
-***
+---
 
 ## Phase2: [Update Image Tag and Create PR](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/actions/workflows/deploy-image.yaml)
 
@@ -56,6 +55,7 @@ This phase handles the updating of the image tag and the creation of pull reques
 3. **Terraform Plan**: The Terraform plan is generated to assess the impact of the changes made to the infrastructure. This step provides insight into the modifications that will be applied during the deployment process.
 
 4. **Pull Request Creation**:
+
    - Once the image tag is updated and the Terraform plan is generated, a pull request is created automatically.
    - The pull request includes the proposed changes to the infrastructure, allowing for review and validation before deployment.
 
@@ -71,20 +71,23 @@ This phase ensures that changes to the Docker image and infrastructure are prope
 ![terrafromplan](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/b537cc73-a8be-42e8-a071-22544d6a7adb)
 ![Merge](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/c25064f9-47e4-413a-a69a-9a3f1390ff1d)
 
-***
+---
 
 ## Phase3: [Deploy the Changes](https://app.terraform.io/app/aws-app-hosting/workspaces/TuroAutomateCloudWebDeploy/runs)
 
 This phase focuses on deploying the changes to the infrastructure and application. Here's a detailed overview:
 
 1. **Review and Approve**:
+
    - Before deployment, the changes proposed in the Terraform plan are reviewed and approved. This step ensures that any modifications to the infrastructure meet the necessary requirements and standards.
 
 2. **Deployment Process**:
+
    - Once the changes are reviewed and approved, the deployment process is initiated.
    - The Terraform configuration is applied to the target environment, implementing the proposed changes to the infrastructure.
 
 3. **UI Access**:
+
    - After successful deployment, users can access the deployed application via the provided UI link.
    - The link directs users to the application interface, where they can interact with the updated features and functionalities.
 
@@ -98,6 +101,5 @@ This phase completes the deployment cycle, ensuring that changes to the infrastr
 <img width="1550" alt="image" src="https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/da35b2b5-0e24-48f5-9e78-f56dc1a090b4">
 
 ### [Access the UI](https://girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu/)
+
 ![image](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/08ef9859-e4d2-488c-8392-1b02a871c961)
-
-
