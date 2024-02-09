@@ -25,16 +25,23 @@ func TestKubernetesResources(t *testing.T) {
 	dnsName := "terratest.test-subaccount-1-v02.test-subaccount-1.rr.mu"
 	kubeConfig := os.Getenv("KUBECONFIG")
 
+	kubeConfigContent, err := os.ReadFile(kubeConfig)
+	if err != nil {
+		t.Fatalf("Error reading kubeconfig file: %v", err)
+	}
+
+	// Convert kubeconfig content to string
+	kubeConfigContentString := string(kubeConfigContent)
+
 	terraformOptions := &terraform.Options{
 		TerraformDir: terraformDir,
 		Vars: map[string]interface{}{
-			"configmap_name":  configmapName,
-			"deployment_name": deploymentName,
-			"service_name":    serviceName,
-			"ingress_name":    ingressName,
-			"dns_name":        dnsName,
-			"KUBE_TOKEN":      os.Getenv("KUBE_TOKEN"),
-			"KUBE_HOST":       os.Getenv("KUBE_HOST"),
+			"configmap_name":      configmapName,
+			"deployment_name":     deploymentName,
+			"service_name":        serviceName,
+			"ingress_name":        ingressName,
+			"dns_name":            dnsName,
+			"KUBE_CONFIG_CONTENT": kubeConfigContentString,
 		},
 	}
 

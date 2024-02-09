@@ -8,9 +8,12 @@ terraform {
   required_version = ">= 1.0"
 }
 
+locals {
+  kubeconfig_decoded = yamldecode(var.KUBE_CONFIG_CONTENT)
+}
+
 provider "kubernetes" {
-  host                   = var.KUBE_HOST
-  cluster_ca_certificate = base64decode(var.KUBE_CLUSTER_CA_CERT_DATA)
-  #   config_context_auth_info = var.KUBE_CTX_AUTH_INFO
-  token = var.KUBE_TOKEN
+  host                   = local.kubeconfig_decoded.clusters[0].cluster.server
+  cluster_ca_certificate = base64decode(local.kubeconfig_decoded.clusters[0].cluster["certificate-authority-data"])
+  token                  = local.kubeconfig_decoded.users[0].user.token
 }

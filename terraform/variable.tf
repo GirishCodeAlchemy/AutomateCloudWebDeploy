@@ -1,16 +1,6 @@
-variable "KUBE_HOST" {
+variable "KUBE_CONFIG_CONTENT" {
   type        = string
-  description = "Specifies the URL of the Kubernetes API server."
-}
-
-variable "KUBE_CLUSTER_CA_CERT_DATA" {
-  type        = string
-  description = "The CA certificate used to verify the authenticity of the Kubernetes cluster"
-}
-
-variable "KUBE_TOKEN" {
-  type        = string
-  description = "Represents the authentication token"
+  description = "Represents the content of kubeconfig"
 }
 
 variable "configmap_name" {
