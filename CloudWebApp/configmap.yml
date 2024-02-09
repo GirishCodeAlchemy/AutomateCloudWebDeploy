@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: girishcodealchemy-configmap
+  name: ${configmap_name}
   namespace: candidate-f
 data:
   nginx.conf: |
@@ -32,7 +32,7 @@ data:
     }
     server {
       listen       443;
-      server_name  girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu;
+      server_name  ${dns_name};
 
       location / {
           root   /usr/share/nginx/html;
