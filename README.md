@@ -26,7 +26,7 @@ This phase automates the process of building and pushing Docker images. Here's h
 
 1. **Automatic Trigger**: The process is automatically triggered if there is any pull request and changes are detected in the Docker folder.
 
-2. **Image Tag Version**: By default, the image tag version is set to `DOCKER_TAG=0.${{ github.run_number }}.${{ github.event.number }}-dev`. This ensures that each build has a unique version identifier.
+2. **Image Tag Version**: By default, the image tag version is set to `DOCKER_TAG=0.${github.run_number}.${github.event.number}-dev`. This ensures that each build has a unique version identifier.
 
 3. **Custom Image Tag**: Users have the option to provide their own image tag. They can do this by navigating to the GitHub Actions workflow and modifying the image tag parameter.
 
