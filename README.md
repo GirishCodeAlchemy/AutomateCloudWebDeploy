@@ -1,6 +1,4 @@
-# AutomateCloudWebDeploy
-
-Turo Assignment: Automating Web Deployment on Cloud
+# Automating Web Deployment on Cloud
 
 This repository addresses the automation of web deployment on the cloud in multiple phases. It involves setting up a basic web application deployment to serve static files using Docker, Terraform, and Kubernetes. The provided code focuses on a specific aspect of this process, which includes building the Docker image, updating Terraform code with the latest tag, and creating a pull request in Git as part of the continuous integration (CI) process. Once the code is merged into the main branch, it triggers a Terraform plan in the Terraform code, deploying and exposing the application in Kubernetes
 
