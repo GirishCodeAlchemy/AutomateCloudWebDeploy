@@ -99,5 +99,5 @@ This phase completes the deployment cycle, ensuring that changes to the infrastr
 <img width="1550" alt="image" src="https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/da35b2b5-0e24-48f5-9e78-f56dc1a090b4">
 
 ### [Access the UI](https://girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu/)
+![image](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/938745d9-2bad-449f-ab6b-b6830df3200a)
 
-![image](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/08ef9859-e4d2-488c-8392-1b02a871c961)
