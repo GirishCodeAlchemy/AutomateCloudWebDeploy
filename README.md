@@ -1,7 +1,7 @@
-# Automating Web Deployment on Cloud
+# <p align="center">[Automating Web Deployment on Cloud](https://girishcodealchemy.github.io/AutomateCloudWebDeploy/)</p>
 
 <p align="center">
-  <img src="./assets/cover.png" width="500" alt="Cloud Web deploy">
+  <img src="./assets/cover.png" alt="Cloud Web deploy">
 </p>
 
 This repository addresses the automation of web deployment on the cloud in multiple phases. It involves setting up a basic web application deployment to serve static files using Docker, Terraform, and Kubernetes. The provided code focuses on a specific aspect of this process, which includes building the Docker image, updating Terraform code with the latest tag, and creating a pull request in Git as part of the continuous integration (CI) process. Once the code is merged into the main branch, it triggers a Terraform plan in the Terraform code, deploying and exposing the application in Kubernetes
