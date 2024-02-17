@@ -34,11 +34,10 @@ This phase automates the process of building and pushing Docker images. Here's h
    - Once completed, Phase 2 will commence, which involves updating the Terraform code.
 
 This phase streamlines the process of Docker image management, ensuring consistency and reliability in the deployment pipeline.
-
-![Buildthe version tag](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/9f1924bb-c514-4031-be06-6132eaf7ee9a)
-![githubaction-build](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/f04529f1-0d02-4fb6-9b7b-f20b2fde3444)
-![phase1](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/751c3e7d-02b2-4884-af98-3c40588f54b0)
-![dockerhub](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/6c0b1ea2-a12b-461c-b32b-b1e54a3e8c5a)
+![Buildthe version tag](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/09f7c3d3-11e7-47c2-8b9d-a96ac60967c6)
+![githubaction-build](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/3b239254-edcb-4957-9c63-78dcb5c1d330)
+![phase1](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/e73f7631-56d0-4331-9bab-4f6992ffc1d1)
+![dockerhub](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/40fc37a3-6ebd-4e04-be38-834974b51fde)
 
 ---
 
@@ -64,10 +63,13 @@ This phase handles the updating of the image tag and the creation of pull reques
 
 This phase ensures that changes to the Docker image and infrastructure are properly evaluated and integrated into the deployment pipeline, maintaining the reliability and stability of the application.
 
-![Continuous Integration](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/b2bc4248-be4e-48cd-9e20-8e67c16f85c7)
-![Screenshot 2024-02-06 at 1 00 38 PM](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/c04f732e-e33c-4289-9414-75c5e5e9301e)
-![terrafromplan](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/b537cc73-a8be-42e8-a071-22544d6a7adb)
-![Merge](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/c25064f9-47e4-413a-a69a-9a3f1390ff1d)
+
+![Continuous Integration](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/34039b99-23c3-451c-a749-9a9ec80a0032)
+![pr created](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/7c674ec7-a8a4-4b92-a65d-85947f2d8d11)
+![Terratest](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/d76e5807-fb89-47d8-bc5b-357f756b8c17)
+![terraplan](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/68826bee-31d1-49b8-944e-bba1e58a5f7c)
+![Merge](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/28c06727-3123-42b3-8560-1d4544ff087a)
+
 
 ---
 
@@ -95,8 +97,11 @@ This phase focuses on deploying the changes to the infrastructure and applicatio
 
 This phase completes the deployment cycle, ensuring that changes to the infrastructure and application are successfully deployed and accessible to users. It emphasizes the importance of thorough review and approval processes to maintain the reliability and stability of the deployed environment.
 
-![review and approve](https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/d1e88cad-4db4-4e04-a6e2-759bb0683c30)
+![image](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/8f39469a-cadf-44d1-a3bc-1b95f9629efb)
+
+![image](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/173e9ac2-958e-4d8f-947c-4f48c00625a7)
 <img width="1550" alt="image" src="https://github.com/GirishCodeAlchemy/TuroAutomateCloudWebDeploy/assets/143807663/da35b2b5-0e24-48f5-9e78-f56dc1a090b4">
+
 
 ### [Access the UI](https://girishcodealchemy.test-subaccount-1-v02.test-subaccount-1.rr.mu/)
 ![image](https://github.com/GirishCodeAlchemy/AutomateCloudWebDeploy/assets/143807663/938745d9-2bad-449f-ab6b-b6830df3200a)
